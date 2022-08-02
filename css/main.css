@@ -137,7 +137,7 @@ address {
   height: 100vh;
   background: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition-property: opacity;
+  transition-property: opacity visibility;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -519,9 +519,15 @@ address {
   color: #757575;
 }
 
-.modal-form__label-conditions {
+.modal-form__label-box {
   position: relative;
   margin: 0 auto 30px;
+  display: flex;
+  align-items: baseline;
+}
+
+.modal-form__label-conditions {
+  display: block;
   padding-left: 23px;
   padding-top: 2px;
   font-weight: 400;
@@ -673,6 +679,40 @@ address {
   margin-left: 93px;
 }
 
+.header-navigation__item {
+  position: relative;
+  /*Декоративний елемент навігації*/
+}
+.header-navigation__item::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  height: 4px;
+  width: 0;
+  background-color: #2196F3;
+  border-radius: 2px;
+  animation-name: animation-underline-none;
+  animation-duration: 250ms;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-navigation__item:focus::before {
+  animation-name: animation-underline;
+  animation-duration: 250ms;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-navigation__item:hover::before {
+  animation-name: animation-underline;
+  animation-duration: 250ms;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .header-navigation__item:not(:first-child) {
   margin-left: 50px;
 }
@@ -692,35 +732,6 @@ address {
 }
 .header-navigation__link:hover {
   color: #2196F3;
-}
-.header-navigation__link::before {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: -1px;
-  height: 4px;
-  width: 0;
-  background-color: #2196F3;
-  border-radius: 2px;
-  animation-name: animation-underline-none;
-  animation-duration: 250ms;
-  animation-direction: alternate;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.header-navigation__link:focus::before {
-  animation-name: animation-underline;
-  animation-duration: 250ms;
-  animation-direction: alternate;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.header-navigation__link:hover::before {
-  animation-name: animation-underline;
-  animation-duration: 250ms;
-  animation-direction: alternate;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*Контакти*/
@@ -1000,7 +1011,7 @@ address {
 
 /*Приховування модального вікна бекдропа*/
 .is-hidden {
-  /*visibility: hidden;*/
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
   /*Модальне вікно*/

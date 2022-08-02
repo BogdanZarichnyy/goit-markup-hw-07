@@ -546,7 +546,7 @@
                     <label class="modal-form__label" for="modal-comment">Коментарі</label>
                     <textarea class="modal-form__input-comment modal-form__input-comment--textarea" id="modal-comment" name="user-comment" placeholder="Введіть текст"></textarea>
 
-                    <label class="modal-form__label-conditions" for="modal-conditions">
+                    <div class="modal-form__label-box">
 
                         <input class="modal-form__input-conditions" type="checkbox" id="modal-conditions" value="conditions" name="user-conditions">
                         
@@ -556,11 +556,13 @@
                             <use href="./images/icons.svg#check"></use>
                         </svg>
                         
-                        Погоджуюсь із розсилкою та приймаю
+                        <label class="modal-form__label-conditions" for="modal-conditions">Погоджуюсь із розсилкою та приймаю 
                         
-                        <a class="modal-form__link-conditions" href="#">Умови договору</a>
+                            <a class="modal-form__link-conditions" href="#">Умови договору</a>
+                            
+                        </label>
 
-                    </label>
+                    </div>
 
                     <button class="button modal-form__button" type="submit" name="form-modal-button">Відправити</button>
 

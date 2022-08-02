@@ -17,9 +17,17 @@
     color: getColor('text-color__secondary');
 }
 
-.modal-form__label-conditions {
+.modal-form__label-box {
     position: relative;
     margin: 0 auto 30px;
+    display: flex;
+    align-items: baseline;
+}
+
+.modal-form__label-conditions {
+    // position: relative;
+    // margin: 0 auto 30px;
+    display: block;
     padding-left: 23px;
     padding-top: 2px;
     font-weight: 400;
