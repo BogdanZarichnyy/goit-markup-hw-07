@@ -1,0 +1,26 @@
+/*Обгортка для футера*/
+.footer-box {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-box__contact,
+.footer-box__address {
+    display: block;
+}
+
+.footer-box__address {
+    margin-top: 20px;
+}
+
+.footer-box__logo {
+    color: getColor('content-color');
+}
+
+.footer-box__join {
+    margin-left: 70px;
+}
+
+.footer-box__subscription {
+    margin-left: auto;
+}
