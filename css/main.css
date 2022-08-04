@@ -34,9 +34,10 @@ ul {
   margin: 0;
 }
 
-img {
+/*Бокс для зображень*/
+.box-image {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -59,7 +60,7 @@ address {
 }
 
 /*Контейнер контенту - ширина 1200px*/
-.container-content {
+.container {
   max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
@@ -69,6 +70,31 @@ address {
 .main-content {
   background-color: inherit;
   flex: 1 0 auto;
+}
+
+/*Бокс для списків*/
+.box-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+
+.box-list__item {
+  margin: 15px;
+}
+
+/*Бекдроп*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition-property: opacity visibility;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form__input-comment, .modal-form__input-name,
@@ -93,12 +119,6 @@ address {
   padding: 94px 0;
 }
 
-/*Хедер*/
-.section-header {
-  /*height: 80px;*/
-  border-bottom: 1px solid #ECECEC;
-}
-
 /*Замовлення*/
 .section-order {
   /*height: 600px;*/
@@ -119,27 +139,6 @@ address {
 /*Наша команда*/
 .section-team {
   background-color: #F5F4FA;
-}
-
-/*Футер*/
-.section-footer {
-  /*height: 252px;*/
-  background-color: #2F303A;
-  padding: 60px 0;
-}
-
-/*Бекдроп*/
-.section-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  transition-property: opacity visibility;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*Логотип*/
@@ -195,7 +194,7 @@ address {
 }
 
 /*Замовлення*/
-.title-page {
+.title-order {
   margin: 0 auto 30px;
   max-width: 600px;
   font-size: 44px;
@@ -215,7 +214,7 @@ address {
 }
 
 /*Футер*/
-.title-box {
+.title-footer {
   font-size: inherit;
   letter-spacing: 0.03em;
   color: #FFFFFF;
@@ -289,40 +288,6 @@ address {
   fill: #2196F3;
 }
 
-/*Бокс для списків*/
-.box-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -15px;
-}
-
-.box-list__item {
-  margin: 15px;
-}
-
-/*Бокс для зображень*/
-.box-image {
-  display: block;
-  width: 100%;
-}
-
-/*Модальне вікно*/
-.box-modal {
-  position: absolute;
-  width: 528px;
-  /*height: 581px;*/
-  padding: 40px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  background-color: #FFFFFF;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  transition-property: transform;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 /*Секція постерів*/
 /*Фільтр*/
 .filter-list {
@@ -360,7 +325,6 @@ address {
 .social-list {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
 }
 
 .social-list__item {
@@ -409,95 +373,21 @@ address {
   fill: currentColor;
 }
 
-/*Адреса футера*/
-.address-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.address-list__item:not(:first-child) {
-  margin-top: 9px;
-}
-
-.address-list__link,
-.address-list__contact-link {
-  font-weight: 400;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  color: #FFFFFF;
-  transition-property: color;
+/*Модальне вікно*/
+.modal-box {
+  position: absolute;
+  width: 528px;
+  /*height: 581px;*/
+  padding: 40px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.address-list__link {
-  position: relative;
-}
-.address-list__link:focus {
-  color: #188ce8;
-}
-.address-list__link:hover {
-  color: #2196F3;
-}
-
-.address-list__contact-link {
-  display: inline;
-  padding: 0;
-  color: rgba(255, 255, 255, 0.6);
-}
-.address-list__contact-link:focus {
-  color: #188ce8;
-}
-.address-list__contact-link:hover {
-  color: #2196F3;
-}
-
-/*Форма на розсилку*/
-.subscription-form {
-  /*width: 570px;*/
-  display: flex;
-}
-
-.subscription-form__email {
-  outline: transparent;
-  width: 358px;
-  height: 50px;
-  padding: 15px 16px;
-  font-size: 16px;
-  line-height: 1.25;
-  letter-spacing: 0.03em;
-  color: #FFFFFF;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition-property: color border;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.subscription-form__email::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-.subscription-form__email:focus {
-  border: 1px solid #2196F3;
-  border-radius: 4px;
-  caret-color: #2196F3;
-  color: #2196F3;
-}
-
-.subscription-form__button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 12px;
-  width: 200px;
-  padding: 10px 28px 10px 29px;
-}
-
-.subscription-form__image {
-  display: inline-block;
-  fill: currentColor;
 }
 
 /*Форма модального вікна*/
@@ -668,22 +558,44 @@ address {
   padding: 10px 55px;
 }
 
+/*Хедер*/
+.header {
+  /*height: 80px;*/
+  border-bottom: 1px solid #ECECEC;
+}
+
 /*Обгортка для хедеру та блок навігації*/
-.header-navigation {
+.header__wrapper {
   display: flex;
   align-items: center;
 }
 
-.header-navigation__list {
+/* Блок навігації */
+.header__navigation {
   display: flex;
-  margin-left: 93px;
+  align-items: center;
 }
 
-.header-navigation__item {
+.header__list {
+  display: flex;
+  margin-left: 93px;
+  /*Контакти*/
+}
+.header__list--contacts {
+  margin-left: auto;
+}
+.header__list--contacts .header__item:not(:first-child) {
+  margin-left: 30px;
+}
+.header__list--contacts .header__item::before {
+  display: none;
+}
+
+.header__item {
   position: relative;
   /*Декоративний елемент навігації*/
 }
-.header-navigation__item::before {
+.header__item::before {
   content: "";
   position: absolute;
   right: 0;
@@ -698,26 +610,25 @@ address {
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.header-navigation__item:focus::before {
+.header__item:focus::before {
   animation-name: animation-underline;
   animation-duration: 250ms;
   animation-direction: alternate;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.header-navigation__item:hover::before {
+.header__item:hover::before {
   animation-name: animation-underline;
   animation-duration: 250ms;
   animation-direction: alternate;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.header-navigation__item:not(:first-child) {
+.header__item:not(:first-child) {
   margin-left: 50px;
 }
 
-.header-navigation__link {
+.header__link {
   display: block;
   position: relative;
   color: #212121;
@@ -727,22 +638,14 @@ address {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   /*Декоративний елемент навігації*/
 }
-.header-navigation__link:focus {
+.header__link:focus {
   color: #188ce8;
 }
-.header-navigation__link:hover {
+.header__link:hover {
   color: #2196F3;
 }
 
 /*Контакти*/
-.header-navigation__contacts {
-  margin-left: auto;
-}
-
-.header-navigation__contact:not(:first-child) {
-  margin-left: 30px;
-}
-
 /*Про нас*/
 /*Наші цілі*/
 .about-item {
@@ -823,13 +726,16 @@ address {
   color: #757575;
 }
 
+.team-item .social-list {
+  margin-bottom: 30px;
+}
+
 /*Клієнти*/
 /*Клієнтура*/
 .client-item {
   display: block;
   width: 170px;
   height: 92px;
-  margin: 15px;
 }
 
 .client-item__link {
@@ -928,31 +834,123 @@ address {
   color: #757575;
 }
 
+/*Футер*/
+.footer {
+  /*height: 252px;*/
+  background-color: #2F303A;
+  padding: 60px 0;
+}
+
 /*Обгортка для футера*/
-.footer-box {
+.footer__wrraper {
   display: flex;
   align-items: baseline;
 }
 
-.footer-box__contact,
-.footer-box__address {
+.footer__contacts,
+.footer__address {
   display: block;
 }
 
-.footer-box__address {
-  margin-top: 20px;
-}
-
-.footer-box__logo {
+.footer__logo {
   color: #FFFFFF;
 }
 
-.footer-box__join {
+.footer__address {
+  margin-top: 20px;
+}
+
+/*Адреса футера*/
+.footer__address-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__address-item:not(:first-child) {
+  margin-top: 9px;
+}
+
+.footer__address-link,
+.footer__contact-link {
+  font-weight: 400;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer__address-link {
+  position: relative;
+}
+.footer__address-link:focus {
+  color: #188ce8;
+}
+.footer__address-link:hover {
+  color: #2196F3;
+}
+
+.footer__contact-link {
+  display: inline;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer__join {
   margin-left: 70px;
 }
 
-.footer-box__subscription {
+.footer__subscription {
   margin-left: auto;
+}
+
+/*Форма на розсилку*/
+.footer__form {
+  /*width: 570px;*/
+  display: flex;
+}
+
+.footer__input-email {
+  outline: transparent;
+  width: 358px;
+  height: 50px;
+  padding: 15px 16px;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition-property: color border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer__input-email::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer__input-email:focus {
+  border: 1px solid #2196F3;
+  border-radius: 4px;
+  caret-color: #2196F3;
+  color: #2196F3;
+}
+
+.footer__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 12px;
+  width: 200px;
+  padding: 10px 28px 10px 29px;
+}
+
+.footer__button-image {
+  display: inline-block;
+  fill: currentColor;
 }
 
 /*Вказівник навігації для поточної сторінки*/
@@ -1016,7 +1014,7 @@ address {
   pointer-events: none;
   /*Модальне вікно*/
 }
-.is-hidden .box-modal {
+.is-hidden .modal-box {
   transform: translate(-50%, -50%) scale(0);
 }
 

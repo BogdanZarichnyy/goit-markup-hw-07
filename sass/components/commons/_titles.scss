@@ -1,5 +1,5 @@
 /*Замовлення*/
-.title-page {
+.title-order {
     margin: 0 auto 30px;
     max-width: 600px;
     font-weight: getFonts('unit__font-weight');
@@ -20,7 +20,7 @@
 }
 
 /*Футер*/
-.title-box {
+.title-footer {
     font-size: inherit;
     letter-spacing: getFonts('title__letter-spacing');
     color: getColor('content-color');

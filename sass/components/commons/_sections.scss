@@ -3,12 +3,6 @@
     padding: 94px 0;
 }
 
-/*Хедер*/
-.section-header {
-    /*height: 80px;*/
-    border-bottom: 1px solid getColor('header__border-color');
-}
-
 /*Замовлення*/
 .section-order {
     /*height: 600px;*/
@@ -33,27 +27,4 @@
 /*Наша команда*/
 .section-team {
     background-color: getColor('section-fon__secondary');
-}
-
-/*Футер*/
-.section-footer {
-    /*height: 252px;*/
-    background-color: getColor('section-fon__primary');
-    padding: 60px 0;
-}
-
-/*Бекдроп*/
-.section-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: getColor('box-shadow-3');
-    opacity: 1;
-    @include transition-animation(opacity visibility);
-    // transition-property: opacity;
-    // transition-duration: 250ms;
-    // transition-timing-function:
-    //     cubic-bezier(0.4, 0, 0.2, 1);
 }

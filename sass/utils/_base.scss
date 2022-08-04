@@ -31,9 +31,10 @@ ul {
     margin: 0;
 }
 
-img {
+/*Бокс для зображень*/
+.box-image {
     display: block;
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -56,7 +57,7 @@ address {
 }
 
 /*Контейнер контенту - ширина 1200px*/
-.container-content {
+.container {
     max-width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
@@ -70,4 +71,31 @@ address {
     // flex-grow: 1; //Коефіцієнт розтягування - коефіцієнт збільшення ширини flex-елементу відносно інших flex-елементів.
     // flex-shrink: 0; //Коефіцієнт звуження - коефіцієнт зменшення ширини flex-елементу щодо інших flex-елементів.
     // flex-basis: auto; //Базова ширина flex-елемента.
+}
+
+/*Бокс для списків*/
+.box-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+}
+
+.box-list__item {
+    margin: 15px;
+}
+
+/*Бекдроп*/
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: getColor('box-shadow-3');
+    opacity: 1;
+    @include transition-animation(opacity visibility);
+    // transition-property: opacity;
+    // transition-duration: 250ms;
+    // transition-timing-function:
+    //     cubic-bezier(0.4, 0, 0.2, 1);
 }
