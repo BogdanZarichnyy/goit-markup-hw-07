@@ -18,13 +18,13 @@
     line-height: getFonts('item__line-height');
     letter-spacing: getFonts('title__letter-spacing');
     color: getColor('text-color__primary');
-}
-    
-.team-item__job {
-    padding-top: 0;
-    padding-bottom: 16px;
-    font-weight: getFonts('title__font-weight');
-    color: getColor('text-color__secondary');
+
+    &--job {
+        padding-top: 0;
+        padding-bottom: 16px;
+        font-weight: getFonts('title__font-weight');
+        color: getColor('text-color__secondary');
+    }
 }
 
 .team-item .social-list{

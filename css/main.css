@@ -718,8 +718,7 @@ address {
   letter-spacing: 0.03em;
   color: #212121;
 }
-
-.team-item__job {
+.team-item__name--job {
   padding-top: 0;
   padding-bottom: 16px;
   font-weight: 400;
